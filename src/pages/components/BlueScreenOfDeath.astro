@@ -1,0 +1,31 @@
+<div class="absolute z-1 w-screen h-screen bg-[#1F67B3] hidden items-center" id="blue-screen">
+	<div class="max-w-[70%] w-full mx-auto flex flex-col gap-2 text-white">
+		<span class="text-[4.5rem]">( ._.)</span>	
+		<span class="text-3xl mb-4 font-normal">I don't know WHAT<br/>the frick is going on.</span>
+		<span class="font-light">Good luck searching for it online though.</span>
+		<span class="font-light">Here's a useless number that Google has no results for. Try Bing. Just kidding.</span>
+	</div>
+</div>
+<script>
+	import { PaskaOvo } from "@egamagz/paska-ovo";
+
+	const screen = document.getElementById("blue-screen");
+
+	const onFound = () =>{
+		screen?.classList.replace("hidden", "flex");
+	};
+
+	const onFinish = () => {
+		screen?.classList.replace("flex", "hidden");
+	};
+
+	const paskaOvo = new PaskaOvo({
+		code: [..."error"],
+		onFound,
+		onFinish,
+		duration: 1_000,
+		tag:"Bsod"
+	});
+
+	paskaOvo.listen();
+</script>
