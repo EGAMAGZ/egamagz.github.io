@@ -6,18 +6,21 @@
 		<span class="font-light">Here's a useless number that Google has no results for. Try Bing. Just kidding.</span>
 	</div>
 </div>
+
 <script>
 	import { PaskaOvo } from "@egamagz/paska-ovo";
+	import AudioManager from "@/util/audio";
 
 	const screen = document.getElementById("blue-screen");
 
+	const audioManager = AudioManager.instance;
+
 	const onFound = () =>{
 		screen?.classList.replace("hidden", "flex");
+		audioManager.play("sounds/error.mp3");
 	};
 
-	const onFinish = () => {
-		screen?.classList.replace("flex", "hidden");
-	};
+	const onFinish = () => { screen?.classList.replace("flex", "hidden") };
 
 	const paskaOvo = new PaskaOvo({
 		code: [..."error"],
