@@ -7,4 +7,7 @@ import preact from "@astrojs/preact";
 export default defineConfig({
 	integrations: [tailwind(), preact()],
 	site: "https://egamagz.github.io",
+	devToolbar: {
+		enabled: false
+	},
 });

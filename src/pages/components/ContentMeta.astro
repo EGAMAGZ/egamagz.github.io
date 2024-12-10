@@ -1,0 +1,11 @@
+---
+const DEFAULT_TITLE = "EGAMAGZ"
+
+
+interface Props {
+	title?: string
+}
+
+const {title = DEFAULT_TITLE} = Astro.props;
+---
+<title>{ title }</title>
